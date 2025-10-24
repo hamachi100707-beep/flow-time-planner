@@ -1,4 +1,3 @@
-// next.config.js
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -9,7 +8,7 @@ const withPWA = require('next-pwa')({
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    turbo: {}, // ✅ Turbopack用に空オブジェクトを指定
+    turbo: {}, // ✅ Turbopackを有効化
   },
 };
 
