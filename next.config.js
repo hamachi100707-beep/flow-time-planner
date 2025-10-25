@@ -1,5 +1,5 @@
 // next.config.js
-const withPWA = require("next-pwa")({
+const withPWA = require("@ducanh2912/next-pwa").default({
   dest: "public",
   register: true,
   skipWaiting: true,
@@ -9,10 +9,11 @@ const withPWA = require("next-pwa")({
 const nextConfig = {
   reactStrictMode: true,
 
-  // ✅ Turbopack対応設定（Next.js 16必須）
-  turbopack: {},
+  // ✅ Turbopackではなくwebpackを使用
+  experimental: {
+    turbo: false,
+  },
 
-  // ✅ エラーでビルドが止まらないようにする
   eslint: {
     ignoreDuringBuilds: true,
   },
