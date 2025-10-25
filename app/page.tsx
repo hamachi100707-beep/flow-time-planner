@@ -10,7 +10,7 @@ interface Task {
   date: string;
 }
 
-export default function Planner() {
+export default function Page() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [selected, setSelected] = useState<{ date: string; time: string } | null>(null);
