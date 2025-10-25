@@ -8,9 +8,13 @@ const withPWA = require("next-pwa")({
 
 const nextConfig = {
   reactStrictMode: true,
+
+  // ✅ Turbopack対応（Next.js 16で必須）
   experimental: {
-    turbo: {}, // ✅ Next.js 16用: Turbopack対応
+    turbo: {},
   },
+
+  // ✅ ビルドが止まらないように設定（安全）
   eslint: {
     ignoreDuringBuilds: true,
   },
