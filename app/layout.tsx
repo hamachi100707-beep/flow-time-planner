@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -12,7 +13,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ✅ PWA + メタ情報
 export const metadata: Metadata = {
   title: "Flow Time Planner",
   description: "1日の予定を管理できるWebアプリ",
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
 };
 
-// ✅ Next.js 16 以降は themeColor を viewport で定義
 export const viewport: Viewport = {
   themeColor: "#2563eb",
 };
@@ -32,6 +31,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icon-192.png" />
+        <meta name="theme-color" content="#2563eb" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="FlowPlanner" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
